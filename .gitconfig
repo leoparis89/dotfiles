@@ -1,5 +1,5 @@
 [user]
-	email = levkowal@publicisgroupe.fr
+	email = levkowalski@gmail.com
 	name = Lev Kowalski
 [core]
 	autocrlf = input
@@ -13,3 +13,9 @@
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   type = cat-file -t
   dump = cat-file -p
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
